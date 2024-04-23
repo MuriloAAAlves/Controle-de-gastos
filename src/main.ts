@@ -6,6 +6,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { customTheme } from './config/vuetify.config'
+import type { Router } from 'vue-router'
 
 const app = createApp(App)
 
@@ -22,7 +23,7 @@ initializeRouter()
       }
     })
 
-    app.use(router)
+    app.use(router as Router)
     app.use(vuetify)
     app.mount('#app')
   })

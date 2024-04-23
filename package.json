@@ -1,4 +1,5 @@
 {
+  "homepage": "https://muriloaaalves.github.io/Controle-de-gastos/",
   "name": "finances",
   "version": "0.0.0",
   "private": true,
@@ -10,7 +11,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "chart.js": "^4.4.2",
