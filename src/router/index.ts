@@ -21,11 +21,20 @@ const calculateNextThreeMonths = async () => {
   }
 }
 
-calculateNextThreeMonths()
+const initializeRouter = async () => {
+  try {
+    await calculateNextThreeMonths()
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-})
+    const router = createRouter({
+      history: createWebHistory(),
+      routes
+    })
+    router.push(routes[0].path)
 
-export default router
+    return router
+  } catch (error) {
+    console.error('Erro ao inicializar o roteador:', error)
+  }
+}
+
+export default initializeRouter
